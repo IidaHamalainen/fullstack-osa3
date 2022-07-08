@@ -73,7 +73,7 @@ app.post('/api/persons', (req, res) => {
     if(!body.number) {
         return res.status(400).json({error: 'number missing'})
     }
-    if(persons.includes(body.name)) {
+    if(JSON.stringify(persons).includes(body.name)) {
         return res.status(400).json({error: 'name must be unique'})
     }
 
